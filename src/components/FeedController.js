@@ -24,7 +24,7 @@ export default class FeedController extends Component {
 		return (
 			<div className="FeedController">
 				<BabyButton onClick={() => this.updateFeed()} />
-				<p className="FeedController__text">Last time Bruno ate: <span className="FeedController__time">{this.getTimeFrom(this.state.lastFeed)}</span></p>
+				<p className="FeedController__text">Last feeding time: <span className="FeedController__time">{this.getTimeFrom(this.state.lastFeed)}</span></p>
 			</div>
 		);
 	}
