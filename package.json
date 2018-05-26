@@ -1,0 +1,36 @@
+{
+  "name": "baby-feed",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-dev": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "lint": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "node-sass-chokidar": "^1.2.2"
+  }
+}
